@@ -189,7 +189,8 @@ def not_escape_json_load(path):
     if os.path.isfile(path) is False:
         return None
     with open(path) as fh:
-        data = json.loads(fh.read(), "utf-8")
+        #data = json.loads(fh.read(), "utf-8")
+        data = json.loads( unicode(fh.read(), "utf-8") )
     return data
 
 
